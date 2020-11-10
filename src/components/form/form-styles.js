@@ -47,7 +47,6 @@ export const RadioButton = styled.input.attrs({ type: 'radio' })`
 
     &:checked {
         background-color: #189CA0;
-        color: white !important;
         border: 1px solid #189CA0;
 
         & + label {
