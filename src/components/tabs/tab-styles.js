@@ -15,6 +15,7 @@ export const TabsLi = styled.li`
     color: #FFFFFF;
     font-weight: 600;
     margin-right: 5px;
+    cursor: pointer;
 
     &.active {
         color: #003573;
@@ -26,16 +27,49 @@ export const TabsLi = styled.li`
 `;
 
 export const TabsContentWrapper = styled.div`
-    padding: 30px;
+    
     border: 1px solid lightgrey;
 `;
 
 export const TabContent = styled.div`
     opacity: 0;
     display: none;
+    padding: 30px 30px 20px 30px;
 
     &.active {
         opacity: 1;
         display: block;
     }
+`;
+
+export const Footer = styled.div`
+    background-color: #EAEDF3;
+    padding: 30px;
+`;
+
+export const FlexWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    span {
+        text-decoration: underline;
+        line-height: 32px;
+        cursor: pointer;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    img {
+        margin-right: 15px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+
 `;
