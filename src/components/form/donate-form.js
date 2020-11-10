@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {RadioWrapper, RadioButton, Label, RadioGroup,InputNumber, DonateButton, DonateParagraph} from './form-styles';
 import secureImage from '../../assets/secure.svg';
+import selectedImage from '../../assets/selected.svg';
 
 
 const DonateForm = ({formType}) => {
@@ -25,45 +26,45 @@ const DonateForm = ({formType}) => {
             <p>I would like to make a {formType === 1 ? "monthly" : 'one off'} donation of</p>
             
                 {formType === 1 ? (
-                    <RadioWrapper size="4" defaultValue={formType === 1 ? 12 : 40} onChange={handleChange}>
+                    <RadioWrapper onChange={handleChange}>
                         <RadioGroup>
                             <RadioButton type="radio" value="6" name="amount"/>
-                            <Label>&pound;6</Label>
+                            <Label>&pound;6 <img src={selectedImage} alt="secure"/></Label>
                         </RadioGroup>
                         <RadioGroup>
                             <RadioButton type="radio" value="12" name="amount" defaultChecked/>
-                            <Label>&pound;12</Label>
+                            <Label>&pound;12 <img src={selectedImage} alt="secure"/></Label>
                         </RadioGroup>
                         <RadioGroup>
                             <RadioButton type="radio" value="18" name="amount"/>
-                            <Label>&pound;18</Label>
+                            <Label>&pound;18 <img src={selectedImage} alt="secure"/></Label>
                         </RadioGroup>
                         <RadioGroup>
                             <RadioButton type="radio" value="30" name="amount"/>
-                            <Label>&pound;30</Label>
+                            <Label>&pound;30 <img src={selectedImage} alt="secure"/></Label>
                         </RadioGroup>
-                        <InputNumber type="number" placeholder="other amounts" onChange={handleChange}/>
+                        <InputNumber type="number" placeholder="£ other amounts" onChange={handleChange}/>
                         <DonateButton onClick={formSubmit}>Donate &pound;{amount === 0 ? firstAmount() : amount} {formType === 1 ? "monthly" : 'today'} <img src={secureImage} alt="secure"/></DonateButton>
                     </RadioWrapper>
                 ):(
-                    <RadioWrapper size="4" defaultValue={formType === 1 ? 12 : 40} onChange={handleChange}>
+                    <RadioWrapper onChange={handleChange}>
                         <RadioGroup>
                             <RadioButton type="radio" value="10" name="amount"/>
-                            <Label>&pound;10</Label>
+                            <Label>&pound;10 <img src={selectedImage} alt="secure"/></Label>
                         </RadioGroup>
                         <RadioGroup>
                             <RadioButton type="radio" value="40" name="amount" defaultChecked/>
-                            <Label>&pound;40</Label>
+                            <Label>&pound;40 <img src={selectedImage} alt="secure"/></Label>
                         </RadioGroup>
                         <RadioGroup>
                             <RadioButton type="radio" value="75" name="amount"/>
-                            <Label>&pound;75</Label>
+                            <Label>&pound;75 <img src={selectedImage} alt="secure"/></Label>
                         </RadioGroup>
                         <RadioGroup>
                             <RadioButton type="radio" value="100" name="amount"/>
-                            <Label>&pound;100</Label>
+                            <Label>&pound;100 <img src={selectedImage} alt="secure"/></Label>
                         </RadioGroup>
-                        <InputNumber type="number" placeholder="other amounts" onChange={handleChange}/>
+                        <InputNumber type="number" placeholder="£ other amounts" onChange={handleChange}/>
                         <DonateButton onClick={formSubmit}>Donate &pound;{amount === 0 ? firstAmount() : amount} {formType === 1 ? "monthly" : 'today'} <img src={secureImage} alt="secure"/></DonateButton>
                     </RadioWrapper>
                 )}

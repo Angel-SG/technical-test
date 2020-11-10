@@ -7,6 +7,7 @@ import PaypalImage from '../../assets/paypal-logo.png';
 import VisaImage from '../../assets/visa-logo.png';
 import mastercardImage from '../../assets/mastercard-logo.png';
 
+
 const TabComponent = () => {
 
     const [tab, setTab] = useState(1);
