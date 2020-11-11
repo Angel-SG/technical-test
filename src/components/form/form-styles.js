@@ -7,6 +7,10 @@ export const RadioWrapper = styled.div`
     padding-bottom: 10px;
 `;
 
+export const Paragraph = styled.p`
+    font-weight: 500;
+`;
+
 export const Label = styled.label`
     position: absolute;
     left: 50%;
@@ -31,11 +35,13 @@ export const Label = styled.label`
 export const RadioGroup = styled.div`
     position: relative;
     height: 56px;
+    margin: 0 8px 0 0;
 
     &:nth-child(2) {
         @media (max-width: 587px) {
             margin-right: 0;
-            width: 50%;
+            width: 48.5%;
+            margin-left: 1.5%;
 
             > input {
                 margin-right: 0;
@@ -46,7 +52,8 @@ export const RadioGroup = styled.div`
     &:nth-child(4) {
         @media (max-width: 587px) {
             margin-right: 0;
-            width: 50%;
+            width: 48.5%;
+            margin-left: 1.5%;
 
             > input {
                 margin-right: 0;
@@ -55,8 +62,8 @@ export const RadioGroup = styled.div`
     }
 
     @media (max-width: 587px) {
-        width: 47%;
-        margin-right: 3%;
+        width: 48.5%;
+        margin-right: 1.5%;
         margin-bottom: 3%;
     }
 
@@ -71,7 +78,7 @@ export const RadioButton = styled.input.attrs({ type: 'radio' })`
     border: 1px solid grey;
     display: inline-block;
     background-color: #EAEDF3;
-    margin: 0 8px 0 0;
+    margin: 0;
     text-align: center;
     padding: 15px 0;
     font-size:18px;
@@ -167,6 +174,11 @@ export const DonateParagraph = styled.p`
     background-color: #FACE9B;
     padding: 20px;
     position: relative;
+
+    @media (max-width: 587px) {
+        font-size: 16px;
+        text-align: center;
+    }
 
     &:after {
         content: '';

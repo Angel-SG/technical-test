@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {RadioWrapper, RadioButton, Label, RadioGroup,InputNumber, DonateButton, DonateParagraph} from './form-styles';
+import {RadioWrapper, RadioButton, Label, RadioGroup,InputNumber, DonateButton, DonateParagraph, Paragraph} from './form-styles';
 import secureImage from '../../assets/secure.svg';
 import selectedImage from '../../assets/selected.svg';
 
@@ -14,7 +14,6 @@ const DonateForm = ({formType}) => {
 
     const handleChange = (event) => {
         setAmount(event.target.value);
-      
     }
 
     const formSubmit = () => {
@@ -23,7 +22,7 @@ const DonateForm = ({formType}) => {
 
     return(
        <form>
-            <p>I would like to make a {formType === 1 ? "monthly" : 'one off'} donation of</p>
+            <Paragraph>I would like to make a {formType === 1 ? "monthly" : 'one off'} donation of</Paragraph>
             
                 {formType === 1 ? (
                     <RadioWrapper onChange={handleChange}>

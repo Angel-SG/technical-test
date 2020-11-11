@@ -19,11 +19,14 @@ export const TabsLi = styled.li`
     cursor: pointer;
 
     &.active {
+        margin-top: -7px;
         color: #003573;
         background-color: #FFFFFF;
         border-top: 1px solid lightgrey;
         border-right: 1px solid lightgrey;
-        border-left: 1px solid lightgrey
+        border-left: 1px solid lightgrey;
+        -webkit-box-shadow: -3px -8px 13px -6px rgba(201,201,201,0.82); 
+        box-shadow: -3px -8px 13px -6px rgba(201,201,201,0.82);
     }
 
     @media (max-width: 587px) {
@@ -74,6 +77,7 @@ export const FlexWrapper = styled.div`
         text-decoration: underline;
         line-height: 32px;
         cursor: pointer;
+        font-weight: 500;
     }
 
     p {

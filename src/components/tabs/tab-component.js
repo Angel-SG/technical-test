@@ -21,17 +21,17 @@ const TabComponent = () => {
     
             <TabsContentWrapper>
                 <TabContent className={tab === 1 ? 'tab-item active' : 'tab-item'}>
-                    <DonateForm formType={tab} setTab={setTab} />
+                    <DonateForm formType={tab}/>
                 </TabContent>
 
                 <TabContent className={tab === 2 ? 'tab-item active' : 'tab-item'}>
-                    <DonateForm formType={tab} setTab={setTab}/>
+                    <DonateForm formType={tab}/>
                 </TabContent>
 
                 <Footer>
                     {tab === 1 ? (
                         <FlexWrapper>
-                            <span onClick={()=>setTab(2)}>I would like to give once</span>
+                            <span onClick={()=>setTab(2)}>I would like to make a one-off donation</span>
                             <p>All direct debits are protected by the Direct Debit Guarantee.</p>
                             <div>
                                 <img src={DirectDebitImage} alt="Direct Debit"/>
