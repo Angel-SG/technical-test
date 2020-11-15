@@ -5,6 +5,7 @@ export const RadioWrapper = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
     padding-bottom: 10px;
+
 `;
 
 export const Paragraph = styled.p`
@@ -12,23 +13,38 @@ export const Paragraph = styled.p`
 `;
 
 export const Label = styled.label`
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
     z-index: 5;
+    line-height: 58px;
+
+    font-size: 20px;
     font-weight: 600;
     cursor: pointer;
-    font-size: 20px;
+
+
+    &:focus {
+        border: none;
+        outline: transparent;
+    }
+
+    &.is-active {
+        color: #ffffff;
+        border: 1px solid red;
+    }
 
     img {
         opacity: 0;
         height: 0;
         width: 0;
-        visibility: none;
         z-index: -5;
-        position: absolute;
+        position: relative;
         transition: opacity 0.3s;
+    }
+
+    p {
+        display: none;
+        line-height: 58px;
+        font-size: 20px;
+        font-weight: 600;
     }
 `;
 
@@ -36,12 +52,18 @@ export const RadioGroup = styled.div`
     position: relative;
     height: 56px;
     margin: 0 8px 0 0;
+    width: 116px;
+    height: 56px;
+    display: inline-block;
+    background-color: #EAEDF3;
+    text-align: center;
+    cursor: pointer;
 
     &:nth-child(2) {
         @media (max-width: 587px) {
             margin-right: 0;
-            width: 48.5%;
-            margin-left: 1.5%;
+            width: 48%;
+            margin-left: 1%;
 
             > input {
                 margin-right: 0;
@@ -52,8 +74,8 @@ export const RadioGroup = styled.div`
     &:nth-child(4) {
         @media (max-width: 587px) {
             margin-right: 0;
-            width: 48.5%;
-            margin-left: 1.5%;
+            width: 48%;
+            margin-left: 1%;
 
             > input {
                 margin-right: 0;
@@ -62,8 +84,8 @@ export const RadioGroup = styled.div`
     }
 
     @media (max-width: 587px) {
-        width: 48.5%;
-        margin-right: 1.5%;
+        width: 48%;
+        margin-right: 1%;
         margin-bottom: 3%;
     }
 
@@ -73,18 +95,18 @@ export const RadioButton = styled.input.attrs({ type: 'radio' })`
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 116px;
-    height: 56px;
-    border: 1px solid grey;
-    display: inline-block;
-    background-color: #EAEDF3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
     margin: 0;
-    text-align: center;
-    padding: 15px 0;
-    font-size:18px;
-    font-weight: 600;
-    position: relative;
+    z-index: 0;
     cursor: pointer;
+    display: inline-block;
+    border: 1px solid grey;
 
     &:focus {
         border: none;
@@ -95,20 +117,28 @@ export const RadioButton = styled.input.attrs({ type: 'radio' })`
         background-color: #189CA0;
         border: 1px solid #189CA0;
 
-        & + label {
-            color: #FFFFFF;
-            transform: translate(-82%,-50%);
+        & + img {
 
-            img {
-                opacity: 1;
-                display: inline;
-                width: 25px;
-                right: -31px;
-                top: -2px;
-                height: auto;
-                visibility: initial;
-            }
+            opacity: 1;
+            display: inline;
+            width: 25px;
+            top: 4px;
+            height: auto;
+            z-index: 10;
+            visibility: initial;
+
+            & + p {
+                display: block;
+                color: white;
+                position: absolute;
+                left: 37%;
+                top: 16%;
+                transform: translate(-50%,-50%);
+             }
+            
         }
+
+       
     }
 
     @media (max-width: 587px) {
@@ -117,13 +147,13 @@ export const RadioButton = styled.input.attrs({ type: 'radio' })`
 `;
 
 export const InputNumber = styled.input.attrs({type: 'number'})`
-    height: 52px;
+    height: 54px;
     border: 1px solid grey;
     margin-right: 8px;
     max-width: 150px;
+    padding-left: 15px;
     
     &::placeholder {
-        padding-left: 5px;
         font-size: 16px;
         font-weight: 600;
         color: #000000
